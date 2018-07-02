@@ -38,9 +38,9 @@ int main(int argc, char *argv[])
                              "of a given source folder. This makes it possible to compile the file data into a program\n" <<
                              "and access the files by memory.\n\n"
                              "This program requires no arguments to work, but by doing so everything is done\n" <<
-                             "relative to the installed folder, which can result in a VERY large file if placed wrong.\n" <<
+                             "relative to the current folder you're in while running, which can result in a VERY large file if placed wrong.\n" <<
                              "Two files will be generated: <output>.h and <output>_mapper.h. The latter is used to make\n" <<
-                             "it intellisense-/autocomplete-friendly, by referencing the file-data by name in a much smaller file.\n" <<
+                             "it intellisense-/autocomplete-friendly, by referencing the file data by name in a much smaller file.\n" <<
                              "On a general basis the mapper-file should be included in the program you want to use the files. \n\n"
                              "You can control this program's behavior by using up to three optional arguments:\n" <<
                              "Call: <source-folder> <destination-folder> <output (no file-extension)>\n" <<

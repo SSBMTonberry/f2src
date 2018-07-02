@@ -21,34 +21,7 @@ bool AssetParser::initialize(int argc, char **argv)
     m_outputPath = (argc > 2) ? argv[2] : "./"; //"./files.h";
     m_filename = (argc > 3) ? argv[3] : "files";
 
-    if(!fs::is_directory(m_loadPath))
-    {
-        std::cout << "INVALID source directory: " << m_loadPath << std::endl;
-        return false;
-    }
-    else if(!fs::is_directory(m_outputPath))
-    {
-        std::cout << "INVALID destination directory: " << m_outputPath << std::endl;
-        return false;
-    }
-    else if(StringContains(m_filename, " "))
-    {
-        std::cout << "INVALID output name! Outputs cannot contain spaces! " << std::endl;
-        return false;
-    }
-
-    //Safety: Appending '/' to the end of path if not mentioned
-    if(m_loadPath[m_loadPath.length() - 1] != '\\' || m_loadPath[m_loadPath.length() - 1] != '/')
-        m_loadPath.append("/");
-    if(m_outputPath[m_loadPath.length() - 1] != '\\' || m_outputPath[m_loadPath.length() - 1] != '/')
-        m_outputPath.append("/");
-
-    m_mapperOutputPath = fmt::format("{0}{1}_mapper.h", m_outputPath, m_filename);//"./files_mapper.h";
-    m_outputPath = fmt::format("{0}{1}.h", m_outputPath, m_filename);
-
-    m_container.initialize(m_filename, m_loadPath); //("files", m_loadPath);
-
-    return true;
+    return initialize(m_loadPath, m_outputPath, m_filename);
 }
 
 bool AssetParser::initialize(const std::string &loadPath, const std::string &outputPath,
@@ -75,9 +48,9 @@ bool AssetParser::initialize(const std::string &loadPath, const std::string &out
     }
 
     //Safety: Appending '/' to the end of path if not mentioned
-    if(m_loadPath[m_loadPath.length() - 1] != '\\' || m_loadPath[m_loadPath.length() - 1] != '/')
+    if(m_loadPath[m_loadPath.length() - 1] != '\\' && m_loadPath[m_loadPath.length() - 1] != '/')
         m_loadPath.append("/");
-    if(m_outputPath[m_loadPath.length() - 1] != '\\' || m_outputPath[m_loadPath.length() - 1] != '/')
+    if(m_outputPath[m_loadPath.length() - 1] != '\\' && m_outputPath[m_loadPath.length() - 1] != '/')
         m_outputPath.append("/");
 
     m_mapperOutputPath = fmt::format("{0}{1}_mapper.h", m_outputPath, m_filename);//"./files_mapper.h";
@@ -216,7 +189,7 @@ bool AssetParser::isBlacklisted(const std::string &text)
 
 void AssetParser::createDefaultBlackList()
 {
-    addToFilenameBlacklist({".exe", "AssetGenerator", fmt::format("{0}.h", m_filename)/*"files.h"*/, fmt::format("{0}_mapper.h", m_filename)/*"files_mapper.h"*/, ".bat", ".sh"});
+    addToFilenameBlacklist({".exe", "f2src", fmt::format("{0}.h", m_filename)/*"files.h"*/, fmt::format("{0}_mapper.h", m_filename)/*"files_mapper.h"*/, ".bat", ".sh"});
 }
 
 bool AssetParser::StringContains(const std::string &str, const std::string &text)
@@ -247,6 +220,7 @@ std::string AssetParser::createByteDataStringFromFile(const std::string &loading
         std::replace(variable.begin(), variable.end(), '/', '_');
         std::replace(variable.begin(), variable.end(), '.', '_');
         std::replace(variable.begin(), variable.end(), '-', '_');
+        std::replace(variable.begin(), variable.end(), ' ', '_');
         std::transform(variable.begin(), variable.end(), variable.begin(), ::toupper);
 
         if (variable[0] == '_')
@@ -285,6 +259,7 @@ MappingItem AssetParser::createMappingItemFromFile(const std::string &loadingPat
     std::replace(variable.begin(), variable.end(), '/', '_');
     std::replace(variable.begin(), variable.end(), '.', '_');
     std::replace(variable.begin(), variable.end(), '-', '_');
+    std::replace(variable.begin(), variable.end(), ' ', '_');
     std::transform(variable.begin(), variable.end(), variable.begin(), ::toupper);
 
     if (variable[0] == '_')

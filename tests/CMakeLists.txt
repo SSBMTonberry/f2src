@@ -12,7 +12,7 @@ if(LINUX)
 else()
 
     if(MSVC)
-        
+
     else()
         target_link_libraries(test_f2src stdc++fs)
     endif()

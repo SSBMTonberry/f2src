@@ -21,6 +21,9 @@ void AssetNamespace::initialize(const std::string &basePath, const std::string &
     m_namespace = currentPath.substr(basePath.length());
     m_namespace = std::regex_replace(m_namespace, std::regex("\\\\"), "::");
     m_namespace = std::regex_replace(m_namespace, std::regex("\\/"), "::");
+    std::replace(m_namespace.begin(), m_namespace.end(), '.', '_');
+    std::replace(m_namespace.begin(), m_namespace.end(), '-', '_');
+    std::replace(m_namespace.begin(), m_namespace.end(), ' ', '_');
 }
 
 void AssetNamespace::addData(const std::string &data)
