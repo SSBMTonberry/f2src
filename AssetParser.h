@@ -15,8 +15,9 @@
 #if MSVC
     #include <filesystem>
     namespace fs = std::filesystem;
-#elseif MINGW
+#elif MINGW
     #include <experimental/filesystem>
+    namespace fs = std::experimental::filesystem;
 #else
     #if __GNUC__ < 8 //GCC major version less than 8
         #include <experimental/filesystem>
