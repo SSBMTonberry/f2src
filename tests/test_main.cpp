@@ -7,10 +7,23 @@
 
 #if MSVC
 #include <filesystem>
-#elseif MINGW
-#include <experimental/filesystem>
+    namespace fs = std::filesystem;
+#elif MINGW
+#if __MINGW64_VERSION_MAJOR > 5
+#include <filesystem>
+        namespace fs = std::filesystem;
 #else
 #include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
+#endif
+#else
+#if __GNUC__ < 8 //GCC major version less than 8
+        #include <experimental/filesystem>
+        namespace fs = std::experimental::filesystem;
+    #else
+        #include <filesystem>
+        namespace fs = std::filesystem;
+    #endif
 #endif
 
 int theAnswer() { return 6*9; }

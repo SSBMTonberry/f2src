@@ -15,7 +15,7 @@ const std::string VERSION = fmt::format("{0}.{1}.{2}", VERSION_MAJOR, VERSION_MI
 #include <cstdlib>
 #include <algorithm>
 
-#define _CRT_SECURE_NO_DEPRECATE
+//#define _CRT_SECURE_NO_DEPRECATE
 
 #include "AssetParser.h"
 

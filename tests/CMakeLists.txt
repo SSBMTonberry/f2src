@@ -12,8 +12,9 @@ if(LINUX)
 else()
 
     if(MSVC)
-
+        message("Using MSVC")
     else()
+        message("Using MINGW")
         target_link_libraries(test_f2src stdc++fs)
     endif()
 endif()

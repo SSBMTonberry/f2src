@@ -59,8 +59,9 @@ else()
     message(STATUS ">>> Not Linux")
 
     if(MSVC)
-
+        message("Using MSVC")
     else()
+        message("Using MINGW")
         target_link_libraries(f2src stdc++fs)
     endif()
     # stuff that should happen not on Linux

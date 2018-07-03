@@ -34,3 +34,9 @@
 cmake-build-debug/
 
 cmake-build-release/
+
+\.vs/f2src/v15/
+
+\.vs/
+
+build/

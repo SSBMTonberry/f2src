@@ -5,6 +5,7 @@
 #ifndef PIXELMOUND_ASSETPARSER_H
 #define PIXELMOUND_ASSETPARSER_H
 
+#include "AssetGeneratorConfig.h"
 #include <cstdlib>
 #include <iostream>
 #include <vector>
@@ -16,8 +17,13 @@
     #include <filesystem>
     namespace fs = std::filesystem;
 #elif MINGW
-    #include <experimental/filesystem>
-    namespace fs = std::experimental::filesystem;
+    #if __MINGW64_VERSION_MAJOR > 5
+        #include <filesystem>
+        namespace fs = std::filesystem;
+    #else
+        #include <experimental/filesystem>
+        namespace fs = std::experimental::filesystem;
+    #endif
 #else
     #if __GNUC__ < 8 //GCC major version less than 8
         #include <experimental/filesystem>

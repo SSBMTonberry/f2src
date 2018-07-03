@@ -1,13 +1,13 @@
 #define VERSION_MAJOR 1
 #define VERSION_MINOR 0
 #define VERSION_PATCH 0
-#define LINUX 1
-#define WINDOWS 0
+#define LINUX 0
+#define WINDOWS 1
 #define APPLE 0
-#define MSVC 0
+#define MSVC 1
 #define MINGW 0
-#define CMAKE_MAKE_PROGRAM /usr/bin/make
-#define CMAKE_SYSTEM_NAME Linux
-#define CMAKE_HOST_SYSTEM_NAME Linux //Windows, Linux or Darwin (OS X)
-#define CMAKE_HOST_SYSTEM_PROCESSOR x86_64
-#define CMAKE_CXX_COMPILER_VERSION 8.1.1
+#define CMAKE_MAKE_PROGRAM C:/PROGRA~2/MIB055~1/2017/ENTERP~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe
+#define CMAKE_SYSTEM_NAME Windows
+#define CMAKE_HOST_SYSTEM_NAME Windows //Windows, Linux or Darwin (OS X)
+#define CMAKE_HOST_SYSTEM_PROCESSOR AMD64
+#define CMAKE_CXX_COMPILER_VERSION 19.14.26431.0
