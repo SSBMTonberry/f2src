@@ -2,8 +2,8 @@
 // Created by robin on 28.07.17.
 //
 
-#ifndef PIXELMOUND_MAPPINGITEM_H
-#define PIXELMOUND_MAPPINGITEM_H
+#ifndef F2SRC_MAPPINGITEM_H
+#define F2SRC_MAPPINGITEM_H
 
 #include <stdlib.h>
 
@@ -47,4 +47,4 @@ class MappingItem
 };
 
 
-#endif //PIXELMOUND_MAPPINGITEM_H
+#endif //F2SRC_MAPPINGITEM_H

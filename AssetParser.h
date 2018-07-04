@@ -2,8 +2,8 @@
 // Created by robin on 28.06.17.
 //
 
-#ifndef PIXELMOUND_ASSETPARSER_H
-#define PIXELMOUND_ASSETPARSER_H
+#ifndef F2SRC_ASSETPARSER_H
+#define F2SRC_ASSETPARSER_H
 
 #include "AssetGeneratorConfig.h"
 #include <cstdlib>
@@ -12,6 +12,8 @@
 #include <cstdarg>
 #include <cctype>
 #include <initializer_list>
+#include <sstream>
+#include <fstream>
 
 #if MSVC
     #include <filesystem>
@@ -156,4 +158,4 @@ class AssetParser
 };
 
 
-#endif //PIXELMOUND_ASSETPARSER_H
+#endif //F2SRC_ASSETPARSER_H

@@ -2,7 +2,7 @@
 // Created by robin on 28.06.17.
 //
 
-#include <fstream>
+
 #include "AssetParser.h"
 
 AssetParser::AssetParser() = default;

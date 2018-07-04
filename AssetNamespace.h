@@ -2,8 +2,8 @@
 // Created by robin on 30.06.17.
 //
 
-#ifndef PIXELMOUND_ASSETNAMESPACE_H
-#define PIXELMOUND_ASSETNAMESPACE_H
+#ifndef F2SRC_ASSETNAMESPACE_H
+#define F2SRC_ASSETNAMESPACE_H
 
 #include <stdlib.h>
 #include <iostream>
@@ -47,4 +47,4 @@ class AssetNamespace
 };
 
 
-#endif //PIXELMOUND_ASSETNAMESPACE_H
+#endif //F2SRC_ASSETNAMESPACE_H

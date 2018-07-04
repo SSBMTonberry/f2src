@@ -2,8 +2,8 @@
 // Created by robin on 30.06.17.
 //
 
-#ifndef PIXELMOUND_ASSETCONTAINER_H
-#define PIXELMOUND_ASSETCONTAINER_H
+#ifndef F2SRC_ASSETCONTAINER_H
+#define F2SRC_ASSETCONTAINER_H
 
 #include "AssetNamespace.h"
 
@@ -28,4 +28,4 @@ class AssetContainer
 };
 
 
-#endif //PIXELMOUND_ASSETCONTAINER_H
+#endif //F2SRC_ASSETCONTAINER_H
