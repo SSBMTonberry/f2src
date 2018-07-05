@@ -14,12 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4eeac679-7bf2-4815-bd78-f4cb2a20819d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetGeneratorConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/AssetGeneratorConfig.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetParser.h" beforeDir="false" afterPath="$PROJECT_DIR$/AssetParser.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetNamespace.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AssetNamespace.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetNamespace.h" beforeDir="false" afterPath="$PROJECT_DIR$/AssetNamespace.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files.h" beforeDir="false" afterPath="$PROJECT_DIR$/files.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files_mapper.h" beforeDir="false" afterPath="$PROJECT_DIR$/files_mapper.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -90,8 +88,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="209">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
               <folding>
                 <element signature="e#41#74#0" expanded="true" />
                 <element signature="e#243#261#0" expanded="true" />
@@ -103,8 +101,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+            <state relative-caret-position="285">
+              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -112,13 +110,11 @@
       <file leaf-file-name="test_main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="676">
-              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+            <state relative-caret-position="585">
+              <caret line="185" selection-start-line="185" selection-end-line="185" />
               <folding>
                 <element signature="e#26#49#0" expanded="true" />
-                <element signature="e#161#218#0" expanded="true" />
-                <element signature="e#275#336#0" expanded="true" />
-                <element signature="e#303#539#0" expanded="true" />
+                <element signature="e#227#657#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,8 +123,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="266">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -136,61 +132,60 @@
       <file leaf-file-name="AssetParser.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AssetParser.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5720">
-              <caret line="220" selection-start-line="220" selection-end-line="222" selection-end-column="65" />
-              <folding>
-                <element signature="e#40#58#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="291" column="17" selection-start-line="291" selection-start-column="17" selection-end-line="291" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssetParser.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AssetParser.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AssetParser.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+            <state relative-caret-position="297">
+              <caret line="140" column="14" selection-start-line="140" selection-start-column="14" selection-end-line="140" selection-end-column="14" />
               <folding>
-                <element signature="e#107#140#0" expanded="true" />
-                <element signature="e#243#300#0" expanded="true" />
-                <element signature="e#391#452#0" expanded="true" />
+                <element signature="e#97#130#0" expanded="true" />
+                <element signature="e#379#845#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_mingw_mac.h" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files/mingw-w64/x86_64-7.1.0-release-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h">
+      <file leaf-file-name="AssetNamespace.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AssetNamespace.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="202" column="10" selection-start-line="202" selection-start-column="10" selection-end-line="202" selection-end-column="10" />
+            <state relative-caret-position="555">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="e#246#270#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_mingw_mac.h" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssetGeneratorConfig.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AssetGeneratorConfig.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssetNamespace.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AssetNamespace.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AssetNamespace.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="319">
+              <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MappingItem.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MappingItem.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1349">
+              <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssetContainer.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AssetContainer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -204,12 +199,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/AssetParser.cpp" />
-        <option value="$PROJECT_DIR$/AssetNamespace.cpp" />
         <option value="$PROJECT_DIR$/tests/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/tests/test_main.cpp" />
         <option value="$PROJECT_DIR$/AssetParser.h" />
+        <option value="$PROJECT_DIR$/AssetNamespace.h" />
+        <option value="$PROJECT_DIR$/tests/test_main.cpp" />
+        <option value="$PROJECT_DIR$/AssetNamespace.cpp" />
       </list>
     </option>
   </component>
@@ -233,6 +229,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,7 +246,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,6 +268,8 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.f2src">
+    <configuration name="Test string accumulate" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="f2src" TARGET_NAME="test_f2src" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="f2src" RUN_TARGET_NAME="test_f2src" TEST_CLASS="[string][accumulate]" TEST_METHOD="Test string accumulate" TEST_MODE="SUITE_TEST" />
+    <configuration name="Test string split (AssetNamespace)" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="f2src" TARGET_NAME="test_f2src" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="f2src" RUN_TARGET_NAME="test_f2src" TEST_CLASS="[string][split]" TEST_METHOD="Test string split (AssetNamespace)" TEST_MODE="SUITE_TEST" />
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all" />
     <configuration name="f2src" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="f2src" TARGET_NAME="f2src" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="f2src" RUN_TARGET_NAME="f2src" />
     <configuration name="test_f2src" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="f2src" TARGET_NAME="test_f2src" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="f2src" RUN_TARGET_NAME="test_f2src" />
@@ -279,7 +277,15 @@
       <item itemvalue="Application.Build All" />
       <item itemvalue="Application.f2src" />
       <item itemvalue="Application.test_f2src" />
+      <item itemvalue="Catch.Test string accumulate" />
+      <item itemvalue="Catch.Test string split (AssetNamespace)" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Catch.Test string split (AssetNamespace)" />
+        <item itemvalue="Catch.Test string accumulate" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -298,33 +304,62 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Test_string_accumulate - 2018.07.05 at 22h 16m 38s.xml">
+      <configuration name="Test string accumulate" configurationId="CMakeCatchTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Test_string_accumulate - 2018.07.05 at 22h 20m 02s.xml">
+      <configuration name="Test string accumulate" configurationId="CMakeCatchTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Test_string_accumulate - 2018.07.05 at 22h 21m 27s.xml">
+      <configuration name="Test string accumulate" configurationId="CMakeCatchTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Test_string_split_(AssetNamespace) - 2018.07.05 at 22h 38m 01s.xml">
+      <configuration name="Test string split (AssetNamespace)" configurationId="CMakeCatchTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Test_string_split_(AssetNamespace) - 2018.07.05 at 22h 39m 23s.xml">
+      <configuration name="Test string split (AssetNamespace)" configurationId="CMakeCatchTestRunConfigurationType" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9684000" />
+    <option name="totallyTimeSpent" value="14295000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2574" height="1414" extended-state="6" />
+    <frame x="-1" y="0" width="2562" height="1415" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11757813" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14804688" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.3289269" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.25738725" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.32900763" />
+      <window_info anchor="bottom" id="CMake" order="12" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32977098" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11757813" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.25738725" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977098" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.3289269" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +368,121 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/test_main.cpp</url>
+          <line>178</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/test_main.cpp</url>
+          <line>185</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetContainer.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetContainer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MappingItem.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1349">
+          <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetNamespace.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetParser.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="220" selection-start-line="220" selection-end-line="222" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/fs_path.h" />
+    <entry file="file://$PROJECT_DIR$/AssetGeneratorConfig.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h" />
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-7.1.0-release-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h" />
+    <entry file="file://$PROJECT_DIR$/tests/test_main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="140" column="17" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+          <folding>
+            <element signature="e#26#49#0" expanded="true" />
+            <element signature="e#227#657#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetParser.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding>
+            <element signature="e#97#130#0" expanded="true" />
+            <element signature="e#379#845#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <element signature="e#41#74#0" expanded="true" />
+            <element signature="e#243#261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -351,9 +500,7 @@
           <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
           <folding>
             <element signature="e#26#49#0" expanded="true" />
-            <element signature="e#161#218#0" expanded="true" />
-            <element signature="e#275#336#0" expanded="true" />
-            <element signature="e#303#539#0" expanded="true" />
+            <element signature="e#227#657#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -369,9 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5720">
           <caret line="220" selection-start-line="220" selection-end-line="222" selection-end-column="65" />
-          <folding>
-            <element signature="e#40#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -380,9 +524,8 @@
         <state relative-caret-position="182">
           <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
           <folding>
-            <element signature="e#107#140#0" expanded="true" />
-            <element signature="e#243#300#0" expanded="true" />
-            <element signature="e#391#452#0" expanded="true" />
+            <element signature="e#97#130#0" expanded="true" />
+            <element signature="e#379#845#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -462,9 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4275">
           <caret line="225" column="1" selection-start-line="225" selection-start-column="1" selection-end-line="225" selection-end-column="1" />
-          <folding>
-            <element signature="e#40#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -483,56 +623,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AssetContainer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
+        <state relative-caret-position="323">
           <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MappingItem.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1846">
+        <state relative-caret-position="1349">
           <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AssetNamespace.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AssetParser.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5720">
-          <caret line="220" selection-start-line="220" selection-end-line="222" selection-end-column="65" />
-          <folding>
-            <element signature="e#40#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="30" />
+        <state relative-caret-position="266">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/fs_path.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="236" column="49" selection-start-line="236" selection-start-column="49" selection-end-line="236" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/fs_path.h" />
     <entry file="file://$PROJECT_DIR$/AssetGeneratorConfig.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -542,8 +652,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="209">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding>
             <element signature="e#41#74#0" expanded="true" />
             <element signature="e#243#261#0" expanded="true" />
@@ -551,42 +661,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h">
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h" />
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-7.1.0-release-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h" />
+    <entry file="file://$PROJECT_DIR$/AssetParser.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="297">
+          <caret line="140" column="14" selection-start-line="140" selection-start-column="14" selection-end-line="140" selection-end-column="14" />
+          <folding>
+            <element signature="e#97#130#0" expanded="true" />
+            <element signature="e#379#845#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/mingw-w64/x86_64-7.1.0-release-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h">
+    <entry file="file://$PROJECT_DIR$/AssetParser.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="202" column="10" selection-start-line="202" selection-start-column="10" selection-end-line="202" selection-end-column="10" />
+        <state relative-caret-position="289">
+          <caret line="291" column="17" selection-start-line="291" selection-start-column="17" selection-end-line="291" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        <state relative-caret-position="585">
+          <caret line="185" selection-start-line="185" selection-end-line="185" />
           <folding>
             <element signature="e#26#49#0" expanded="true" />
-            <element signature="e#161#218#0" expanded="true" />
-            <element signature="e#275#336#0" expanded="true" />
-            <element signature="e#303#539#0" expanded="true" />
+            <element signature="e#227#657#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AssetParser.h">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        <state relative-caret-position="285">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetNamespace.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
-            <element signature="e#107#140#0" expanded="true" />
-            <element signature="e#243#300#0" expanded="true" />
-            <element signature="e#391#452#0" expanded="true" />
+            <element signature="e#246#270#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetNamespace.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
         </state>
       </provider>
     </entry>

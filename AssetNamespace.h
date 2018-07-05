@@ -15,6 +15,7 @@
 
 //#include "fmt/string.h"
 #include "MappingItem.h"
+#include <numeric>
 
 class AssetNamespace
 {
@@ -38,7 +39,10 @@ class AssetNamespace
 
         const std::string &getNamespace() const;
 
+        std::vector<std::string> splitString(const std::string &str, const std::string &delimiter);
+
     protected:
+
         std::string m_path = "";
         std::string m_namespace = "";
         std::vector<std::string> m_data;

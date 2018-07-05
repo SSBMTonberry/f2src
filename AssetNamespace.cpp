@@ -24,6 +24,20 @@ void AssetNamespace::initialize(const std::string &basePath, const std::string &
     std::replace(m_namespace.begin(), m_namespace.end(), '.', '_');
     std::replace(m_namespace.begin(), m_namespace.end(), '-', '_');
     std::replace(m_namespace.begin(), m_namespace.end(), ' ', '_');
+
+    std::vector<std::string> parts = splitString(m_namespace, "::");
+    //Add a '_' prefix if name starts with number
+    for(auto &part : parts)
+    {
+        if(part.length() > 0 && std::isdigit(part[0]))
+            part.insert(0, 1, '_');
+    }
+
+    //Compose the string back in again to make a working namespace
+    m_namespace = std::accumulate(parts.begin(), parts.end(), std::string(),
+                    [](const std::string& a, const std::string& b) -> std::string {
+                        return a + (a.length() > 0 ? "::" : "") + b;
+                    });
 }
 
 void AssetNamespace::addData(const std::string &data)
@@ -111,5 +125,23 @@ std::vector<std::string> const & AssetNamespace::getData() const
 std::vector<MappingItem> & AssetNamespace::getFileMapperData()
 {
     return m_fileMapperData;
+}
+
+std::vector<std::string> AssetNamespace::splitString(const std::string &str, const std::string &delimiter)
+{
+    std::vector<std::string> items;
+    std::string splitStr = str;
+    size_t pos = 0;
+    std::string token;
+    while ((pos = splitStr.find(delimiter)) != std::string::npos) {
+        token = splitStr.substr(0, pos);
+        items.push_back(token);
+        splitStr.erase(0, pos + delimiter.length());
+    }
+
+    if(splitStr.length() > 0)
+        items.push_back(splitStr);
+
+    return items;
 }
 

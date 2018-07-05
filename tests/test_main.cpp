@@ -4,6 +4,8 @@
 #include "../AssetParser.h"
 #include "../AssetNamespace.h"
 #include "../AssetGeneratorConfig.h"
+#include <numeric>
+#include <vector>
 
 #if MSVC
 #include <filesystem>
@@ -50,9 +52,9 @@ TEST_CASE("Print all directories from test path", "[directory]" )
 {
     std::string loadpath = "./../../../asset_test_files/";
     std::vector<std::string> directories;
-    for (auto & p : std::experimental::filesystem::recursive_directory_iterator(loadpath))
+    for (auto & p : fs::recursive_directory_iterator(loadpath))
     {
-        bool isDirectory = std::experimental::filesystem::is_directory(p);
+        bool isDirectory = fs::is_directory(p);
         if(isDirectory)
         {
             directories.push_back(p.path().string());
@@ -66,9 +68,9 @@ TEST_CASE("Print all directories AND files from test path", "[directory]" )
 {
     std::string loadpath = "./../../../asset_test_files/";
     std::vector<std::string> directories;
-    for (auto & p : std::experimental::filesystem::recursive_directory_iterator(loadpath))
+    for (auto & p : fs::recursive_directory_iterator(loadpath))
     {
-        bool isDirectory = std::experimental::filesystem::is_directory(p);
+        bool isDirectory = fs::is_directory(p);
         directories.push_back(p.path().string());
     }
 
@@ -79,9 +81,9 @@ TEST_CASE("Check if namespaces are generated right", "[namespace]" )
 {
     std::string loadpath = "./../../../asset_test_files/";
     std::vector<AssetNamespace*> assetNamespaces;
-    for (auto & p : std::experimental::filesystem::recursive_directory_iterator(loadpath))
+    for (auto & p : fs::recursive_directory_iterator(loadpath))
     {
-        bool isDirectory = std::experimental::filesystem::is_directory(p);
+        bool isDirectory = fs::is_directory(p);
         if(isDirectory)
         {
             //directories.push_back(p.path().string());
@@ -163,4 +165,23 @@ TEST_CASE("Test String ToUpper", "[string][to_upper]" )
     str = AssetParser::StringToUpper(str);
     REQUIRE(str == "UPPER CRAP");
 
+}
+
+TEST_CASE("Test string accumulate", "[string][accumulate]" )
+{
+    std::vector<std::string> vec = {"James", "blames", "me", "dammit"};
+    std::string str = std::accumulate(vec.begin(), vec.end(), std::string("::"));
+
+    str = std::accumulate(vec.begin(), vec.end(), std::string(),
+                    [](const std::string& a, const std::string& b) -> std::string {
+                        return a + (a.length() > 0 ? "::" : "") + b;
+                    } );
+    REQUIRE(str == "James::blames::me::dammit");
+}
+
+TEST_CASE("Test string split (AssetNamespace)", "[string][split]" )
+{
+    AssetNamespace ns;
+    std::vector<std::string> vec = ns.splitString("cmake_build_release::CMakeFiles::3_10_3::CompilerIdCXX::tmp", "::");
+    REQUIRE(vec.size() == 5);
 }
