@@ -6,8 +6,8 @@
 #define APPLE 0
 #define MSVC 1
 #define MINGW 0
-#define CMAKE_MAKE_PROGRAM C:/PROGRA~2/MICROS~4/2017/ENTERP~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe
+#define CMAKE_MAKE_PROGRAM C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/MSBuild/15.0/Bin/MSBuild.exe
 #define CMAKE_SYSTEM_NAME Windows
 #define CMAKE_HOST_SYSTEM_NAME Windows //Windows, Linux or Darwin (OS X)
 #define CMAKE_HOST_SYSTEM_PROCESSOR AMD64
-#define CMAKE_CXX_COMPILER_VERSION 19.14.26428.1
+#define CMAKE_CXX_COMPILER_VERSION 19.14.26431.0

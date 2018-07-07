@@ -13,8 +13,6 @@ set(SOURCE_FILES main.cpp AssetParser.cpp AssetParser.h AssetNamespace.cpp Asset
 
 add_executable(f2src ${SOURCE_FILES} ${FMT_SOURCE_FILES})
 
-message(${CMAKE_BUILD_TYPE})
-
 if(UNIX AND NOT APPLE)
     set(LINUX 1)
     set(WINDOWS 0)

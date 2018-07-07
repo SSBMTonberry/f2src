@@ -16,6 +16,7 @@
 //#include "fmt/string.h"
 #include "MappingItem.h"
 #include <numeric>
+#include <ctype.h>
 
 class AssetNamespace
 {

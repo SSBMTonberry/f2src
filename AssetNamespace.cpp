@@ -27,9 +27,13 @@ void AssetNamespace::initialize(const std::string &basePath, const std::string &
 
     std::vector<std::string> parts = splitString(m_namespace, "::");
     //Add a '_' prefix if name starts with number
-    for(auto &part : parts)
+	
+	std::locale loc(std::locale(""));
+	std::locale::global(std::locale(""));
+    
+	for(auto &part : parts)
     {
-        if(part.length() > 0 && std::isdigit(part[0]))
+        if(part.length() > 0 && std::isdigit(part[0], loc))
             part.insert(0, 1, '_');
     }
 
