@@ -52,8 +52,16 @@ Since the code is using CMake, you should be able to compile this easily if you 
 
 >I've tested compiling this program for Windows and Linux. While the code should be compatible with Mac OSX as well, I'm probably missing some stuff that will make you able to compile the program there, as I've never ever used nor owned a Mac before, and have no way to test them. I'd be please if someone with a Mac would try to do the changes needed to compile the program :) 
 
+In general, using `cmake --help` will give a good idea how to compile with CMake, but I will give a brief explanation for those who are a bit less familiar with CMake.
+
 ### Windows
 I've successfully been able to compile the program using MSVC (Via Visual Studio 2017) and MinGW 5 (GCC 7.1.0). I have however **not** been able to compile the program with MinGW 6 (GCC 8.1.0). After some research it seems like (as of today: 07.07.2018) MinGW 6 has some struggles/bugs with the `filesystem` feature of C++17. This will probably be fixed soon, but for now: Use MinGW 5 or MSVC.
+
+In Visual Studio 2017, you can easily just open the folder with the CMakeLists.txt-file and it will be ready to compile.
+
+You can also, however, generate a project file by using the command line or powershell by `cd`-ing into the folder containing the CMakeLists.txt file and do: `cmake -G "Visual Studio 15 2017"`
+
+Alternatively, this simple command should generate whatever is the default of your system: `cmake ./CMakeLists.txt`
 
 ### Linux
 I've developed this primarily using Linux and the CLion IDE. I've compiled the program for GCC 6.3.0, GCC 7.1.0 and GCC 8.1.0.
