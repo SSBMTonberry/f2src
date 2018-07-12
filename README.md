@@ -247,6 +247,8 @@ I've done some basic tests, but I might be missing something, as I've fixed quit
 ## External libraries used
 I've used the [{fmt}](https://github.com/fmtlib/fmt) library to easily format the strings used in the program. The sources for the library itself (v5.0.0) is included and built into the program, so no library files are needed!
 
+Also, I've used the awesome single header test framework [Catch2](https://github.com/catchorg/Catch2/) for my rather simple tests.
+
 ## Possible plans for features in the future
 
  - Make functionality to be able to generate smaller files (base85 encoding or similar?).
