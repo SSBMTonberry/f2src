@@ -9,6 +9,10 @@ add_executable(test_f2src ${SOURCE_FILES} ${FMT_SOURCE_FILES})
 
 if(LINUX)
     target_link_libraries(test_f2src stdc++fs)
+elseif(APPLE)
+    target_link_libraries(test_f2src /usr/local/opt/llvm/lib/libc++experimental.a)
+#elseif(APPLE)
+#    message("THIS IS APPLE!")
 else()
 
     if(MSVC)

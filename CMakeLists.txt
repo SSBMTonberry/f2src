@@ -11,6 +11,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(FMT_SOURCE_FILES fmt/core.h fmt/format.cc fmt/format.h fmt/format-inl.h fmt/ostream.h fmt/posix.cc fmt/posix.h fmt/printf.h fmt/ranges.h fmt/time.h)
 set(SOURCE_FILES main.cpp AssetParser.cpp AssetParser.h AssetNamespace.cpp AssetNamespace.h AssetContainer.cpp AssetContainer.h MappingItem.cpp MappingItem.h)
 
+
+
 add_executable(f2src ${SOURCE_FILES} ${FMT_SOURCE_FILES})
 
 if(UNIX AND NOT APPLE)
@@ -53,6 +55,10 @@ configure_file (
 if(LINUX)
     message(STATUS ">>> Linux")
     target_link_libraries(f2src stdc++fs)
+elseif(APPLE)
+    target_link_libraries(f2src /usr/local/opt/llvm/lib/libc++experimental.a)
+#elseif(APPLE)
+#    message("THIS IS APPLE!")
 else()
     message(STATUS ">>> Not Linux")
 

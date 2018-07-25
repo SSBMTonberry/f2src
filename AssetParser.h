@@ -26,6 +26,9 @@
         #include <experimental/filesystem>
         namespace fs = std::experimental::filesystem;
     #endif
+#elif APPLE
+    #include <experimental/filesystem>
+    namespace fs = std::experimental::filesystem;
 #else
     #if __GNUC__ < 8 //GCC major version less than 8
         #include <experimental/filesystem>
