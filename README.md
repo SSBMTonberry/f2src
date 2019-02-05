@@ -31,8 +31,8 @@ output: files
 ```
 All files are generated as variables with a '_' prefix, to make sure the variable is generated 
 safely. If you however have weird letters in the file name, chances are the variable names get 
-weird as a result. Common characters that are not compatible with variable names or namespaces, 
-like ' '(space), '-' AND '.'
+weird as a result. However, common characters that are not compatible with variable names or namespaces, 
+like ' '(space), '-' AND '.' are replaced with a '_' automatically when generating.
 ```
 
 ## The blacklist
@@ -230,14 +230,7 @@ You can compile it easily by using an IDE like CLion, or by Following these simp
  3. Then compile by calling: `make`
 
 ### Mac
-Since I don't own a Mac and never have touched one, I've been unable to test any compilation with Mac. I doubt the code will compile without any changes, but I think the changes required are minimal. 
-
-#### Some hints that might help:
-The project has a file `AssetGeneratorConfig.h.in` which generates a `AssetGeneratorConfig.h`-fil, containing variables that is set by the CMakeLists.txt file. One of these is the variable `APPLE`, which should be 1 if you are on a Apple system.
-You might need to include som additional stuff in the bottom of the CMakeLists.txt file, based on the criteria if `APPLE` is true/active/1. 
-On the top of the `AssetParser.h` file, there are some preprocessors that includes files based on the system. If you have to include something different here for `APPLE`, you'd need to add an `#elif APPLE` there.
-
-If you've either tested it and it just magically works, please tell me. If you on the other hand needed to do a few changes, please tell what changes were required :)
+This builds on MAC as well. It's fairly easy. Just open the `CMakeLists.txt` in the CMake client and you will figure it out :)
 
 ## Testing
 I've done some basic tests, but I might be missing something, as I've fixed quite some bugs and added a few features the last week. I have however used an earlier version of this program for embedding all my files into my C++ programs for quite some time, for all C++ programs I write, so it should work fine!
