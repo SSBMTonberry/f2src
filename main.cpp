@@ -50,12 +50,17 @@ int main(int argc, char *argv[])
                              "destination-folder: ./\n" <<
                              "output: files\n\n" <<
                              "-v OR --version - Get the current program version.\n" <<
-                             "-h OR --help - Get help and program description.\n";
+                             "-h OR --help - Get help and program description.\n" <<
+                             "-f OR --file - Create source for a single file.\n";
                 return EXIT_SUCCESS;
+            }
+            else if(action == "-f" || action == "--file")
+            {
+                std::cout << "\n Running in single file mode... \n";
             }
             else
             {
-                std::cout << "\n" << action << " is not a valid action! Use the -h or --help argument for help :)";
+                std::cout << "\n" << action << " is not a valid action! Use the -h or --help argument for help :)\n";
                 return EXIT_FAILURE;
             }
         }

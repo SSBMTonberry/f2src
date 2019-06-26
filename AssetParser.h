@@ -54,7 +54,7 @@ class AssetParser
         /*!
         * When no parameters are presented
         */
-        None = 0,
+        Default = 0,
         /*!
          *  -h OR --help - Prints help information (Command itself works as of version 1.0.0)
          */
@@ -64,6 +64,7 @@ class AssetParser
          */
         Version = 2,
         /*!
+         * NOT IMPLEMENTED!
          * -bf OR --blacklistfile - All parameters followed by this will be blacklisted, if they are files.
          *                          Must be called before any files are listed
          * Call: -bf <file1> <file2> <file3> ...
@@ -71,24 +72,35 @@ class AssetParser
          */
         BlacklistFile = 3,
         /*!
+         * NOT IMPLEMENTED!
          * -bd OR --blacklistdir - All parameters followed by this will be blacklisted, if they are folders.
          * Call: -bf <directory1> <directory2> <directory3> ...
          * Example: -bd ./folder ./anotherfolder ./folder1/folder2
          */
         BlackListDirectory = 4,
         /*!
+         * NOT IMPLEMENTED!
          * -f OR --file - Will create .h-files based on a list of files. No blacklist will be taken into consideration, as this is a file chosen by the user, but the file is valiated.
+         * Call: -f <file> <destination folder> <output (no file-extension)> ...
+         * Example: -f ./file.png ./folder/ myname
+         */
+        SingleFile = 5,
+        /*!
+         * NOT IMPLEMENTED!
+         * -fs OR --files - Will create .h-files based on a list of files. No blacklist will be taken into consideration, as this is a file chosen by the user, but the file is valiated.
          * Call: -f <file1> <file2> <file3> ...
          * Example: -f ./file.png ./folder/anotherfile.png ./music.ogg
          */
-        SingleFiles = 5,
+        Files = 5,
         /*!
+         * NOT IMPLEMENTED!
          * -d OR --dir - Will create .h-files based on a list of directories(including their sub-directories). Blacklisted files are ignored, but blacklisted directories are not.
          * Call: -d <directory1> <directory2> <directory3> ...
          * Example: -d ./sprites ./music "./shaders/shaders with spaces"
          */
         Directories = 6,
         /*!
+         * NOT IMPLEMENTED!
          * -a OR --all - All files and subdirectories in the folder where the executable lies. Use for cases where you quickly want to generate a
          *               lot of files.
          * Call: -a
@@ -114,6 +126,7 @@ class AssetParser
 
         bool initialize(int argc, char* argv[]);
         bool initialize(const std::string &loadPath, const std::string &outputPath, const std::string &filename = "files");
+        bool initializeSingleFile(const std::string &loadPath, const std::string &outputPath = "", const std::string &filename = "");
 
         void addToFilenameBlacklist(const char *name);
         void addToFilenameBlacklist(const std::initializer_list<std::string> &list);
@@ -121,6 +134,8 @@ class AssetParser
         void createDefaultBlackList();
 
         void parse();
+        void parseSingleFile();
+
         bool loadAssets();
         void createAssetFile();
         void createMapperFile();
@@ -149,6 +164,8 @@ class AssetParser
         template <typename Out>
         static void split(const std::string &s, char delim, Out result);
 
+        void setMode(const std::string_view &action);
+
         std::string m_loadPath = "";
         std::string m_outputPath = "";
         std::string m_mapperOutputPath = "";
@@ -157,7 +174,7 @@ class AssetParser
         std::vector<std::string> m_blacklistedDirectories; //New 29.06.2018 - NOT IMPLEMENTED - PLANNED FOR FUTURE RELEASE
         std::vector<std::string> m_files;
         AssetContainer m_container;
-        Mode m_currentMode = Mode::None;
+        Mode m_currentMode = Mode::Default;
 };
 
 

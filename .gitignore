@@ -140,3 +140,7 @@ files_mapper\.h
 CMakeFiles/3\.10\.3/
 
 *.cbp
+
+test_files/sprites/players/luigi_mapper\.h
+
+test_files/sprites/players/luigi\.h

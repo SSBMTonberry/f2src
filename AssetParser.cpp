@@ -17,11 +17,72 @@ AssetParser::~AssetParser() = default;
 
 bool AssetParser::initialize(int argc, char **argv)
 {
-    m_loadPath = (argc > 1) ? argv[1] : "./";
-    m_outputPath = (argc > 2) ? argv[2] : "./"; //"./files.h";
-    m_filename = (argc > 3) ? argv[3] : "files";
+    if(argc > 1)
+    {
+        std::string action{argv[1]};
+        setMode(action);
+    }
+    else
+        m_currentMode = Mode::Default;
 
+    if(m_currentMode == Mode::SingleFile)//(action == "-f" || action == "--file")
+    {
+        m_loadPath = (argc > 2) ? argv[2] : "";
+        m_outputPath = (argc > 3) ? argv[3] : ""; //"./files.h";
+        m_filename = (argc > 4) ? argv[4] : "";
+        return initializeSingleFile(m_loadPath, m_outputPath, m_filename);
+    }
+    else
+    {
+        m_loadPath = (argc > 1) ? argv[1] : "./";
+        m_outputPath = (argc > 2) ? argv[2] : "./"; //"./files.h";
+        m_filename = (argc > 3) ? argv[3] : "files";
+    }
     return initialize(m_loadPath, m_outputPath, m_filename);
+}
+
+bool AssetParser::initializeSingleFile(const std::string &loadPath, const std::string &outputPath, const std::string &filename)
+{
+    m_loadPath = loadPath;
+    m_outputPath = outputPath;
+    m_filename = filename;
+    fs::path file = fs::path(m_loadPath);
+    if(fs::is_regular_file(m_loadPath))
+    {
+        if (m_outputPath.empty())
+            m_outputPath = file.parent_path().string();
+        if (m_filename.empty())
+            m_filename = file.stem();
+    }
+
+    if(!fs::is_regular_file(m_loadPath))
+    {
+        std::cout << "INVALID source file: " << m_loadPath << std::endl;
+        return false;
+    }
+    else if(!fs::is_directory(m_outputPath))
+    {
+        std::cout << "INVALID destination directory: " << m_outputPath << std::endl;
+        return false;
+    }
+    else if(StringContains(m_filename, " "))
+    {
+        std::cout << "INVALID output name! Outputs cannot contain spaces! " << std::endl;
+        return false;
+    }
+
+    //Safety: Appending '/' to the end of path if not mentioned
+    //if(m_loadPath[m_loadPath.length() - 1] != '\\' && m_loadPath[m_loadPath.length() - 1] != '/')
+    //    m_loadPath.append("/");
+    if(m_outputPath[m_loadPath.length() - 1] != '\\' && m_outputPath[m_loadPath.length() - 1] != '/')
+        m_outputPath.append("/");
+
+    m_mapperOutputPath = fmt::format("{0}{1}_mapper.h", m_outputPath, m_filename);//"./files_mapper.h";
+    m_outputPath = fmt::format("{0}{1}.h", m_outputPath, m_filename);
+
+    m_container.initialize(m_filename, m_loadPath); //("files", m_loadPath);
+
+    return true;
 }
 
 bool AssetParser::initialize(const std::string &loadPath, const std::string &outputPath,
@@ -131,6 +192,30 @@ void AssetParser::parse()
     }
 }
 
+/*!
+ * Can parse a single file
+ */
+void AssetParser::parseSingleFile()
+{
+    m_container.clear();
+    m_files.clear();
+
+    fs::path p = fs::path(m_loadPath);
+
+    if(fs::is_regular_file(p))
+    {
+        if(!isBlacklisted(p.u8string()))
+        {
+            std::cout << "Adding file to container: " << p.u8string() << "\n";
+            m_files.push_back(p.u8string());
+        }
+        else
+        {
+            std::cout << "Path contains blacklisted file (file ignored): " << p.u8string() << "\n";
+        }
+    }
+}
+
 bool AssetParser::loadAssets()
 {
     try
@@ -158,8 +243,8 @@ void AssetParser::createAssetFile()
 {
     //std::ofstream fout(m_outputPath, std::ofstream::out | std::ofstream::app);
     std::ofstream fout(m_outputPath);
-    fout << fmt::format("#ifndef ASSET_GENERATOR_{0}\n", StringToUpper(m_filename));
-    fout << fmt::format("#define ASSET_GENERATOR_{0}\n", StringToUpper(m_filename));
+    fout << fmt::format("#ifndef F2SRC_ASSET_{0}\n", StringToUpper(m_filename));
+    fout << fmt::format("#define F2SRC_ASSET_{0}\n", StringToUpper(m_filename));
 
     fout << "namespace " << m_container.getNamespace() << "\n";
     fout << "{\n";
@@ -172,7 +257,7 @@ void AssetParser::createAssetFile()
         asset.writeData(fout);
     }
     fout << "}\n";
-    fout << fmt::format("#endif //ASSET_GENERATOR_{0}\n", StringToUpper(m_filename));
+    fout << fmt::format("#endif //F2SRC_ASSET_{0}\n", StringToUpper(m_filename));
     fout.close();
 }
 
@@ -212,10 +297,11 @@ std::string AssetParser::createByteDataStringFromFile(const std::string &loading
     }
     else
     {
-        std::string variable = filePath;
+        fs::path file = fs::path(filePath);
+        std::string variable = file.filename().u8string(); //filePath;
         //AssetParser::StringReplace(&variable, loadingPath, "");
 
-        variable = variable.substr(loadingPath.length()); //Ignore the __ in the start or the loading path part
+        //variable = variable.substr(loadingPath.length()); //Ignore the __ in the start or the loading path part
         std::replace(variable.begin(), variable.end(), '\\', '_');
         std::replace(variable.begin(), variable.end(), '/', '_');
         std::replace(variable.begin(), variable.end(), '.', '_');
@@ -252,9 +338,13 @@ MappingItem AssetParser::createMappingItemFromFile(const std::string &loadingPat
 
     item.setValueNamespace(fileNamespace);
     item.setRootNamespace(m_container.getNamespace());
-    std::string variable = filePath;
 
-    variable = variable.substr(loadingPath.length()); //Ignore the __ in the start or the loading path part
+    //std::string variable = filePath;
+    //variable = variable.substr(loadingPath.length()); //Ignore the __ in the start or the loading path part
+
+    fs::path file = fs::path(filePath);
+    std::string variable = file.filename().u8string();
+
     std::replace(variable.begin(), variable.end(), '\\', '_');
     std::replace(variable.begin(), variable.end(), '/', '_');
     std::replace(variable.begin(), variable.end(), '.', '_');
@@ -282,7 +372,7 @@ bool AssetParser::IsDirectory(const fs::directory_entry &entry)
 
 std::string AssetParser::GetPath(const fs::directory_entry &entry)
 {
-    return entry.path().string();
+    return entry.path().u8string();
 }
 
 std::vector<std::string> AssetParser::SplitString(const std::string &s, char delim)
@@ -328,8 +418,8 @@ void AssetParser::createMapperFile()
 {
     //std::ofstream fout(m_outputPath, std::ofstream::out | std::ofstream::app);
     std::ofstream fout(m_mapperOutputPath);
-    fout << fmt::format("#ifndef ASSET_GENERATOR_{0}_FILE_MAPPER\n", StringToUpper(m_filename));
-    fout << fmt::format("#define ASSET_GENERATOR_{0}_FILE_MAPPER\n", StringToUpper(m_filename));
+    fout << fmt::format("#ifndef F2SRC_ASSET_{0}_FILE_MAPPER\n", StringToUpper(m_filename));
+    fout << fmt::format("#define F2SRC_ASSET_{0}_FILE_MAPPER\n", StringToUpper(m_filename));
     //fout << "#include \"files.h\"\n\n";
     fout << fmt::format("#include \"{0}.h\"\n\n", m_filename);
     fout << "namespace " << m_container.getNamespace() << "_mapper" << "\n";
@@ -346,7 +436,7 @@ void AssetParser::createMapperFile()
         asset.writeFilemapperData(fout);
     }
     fout << "}\n";
-    fout << fmt::format("#endif //ASSET_GENERATOR_{0}_FILE_MAPPER\n", StringToUpper(m_filename));
+    fout << fmt::format("#endif //F2SRC_ASSET_{0}_FILE_MAPPER\n", StringToUpper(m_filename));
     fout.close();
 }
 
@@ -356,8 +446,16 @@ void AssetParser::run()
     std::cout << "Generating default blacklist for files..." << "\n";
     createDefaultBlackList();
     printBlacklist();
-    std::cout << "Parsing assets..." << "\n";
-    parse();
+    if(m_currentMode == Mode::SingleFile)
+    {
+        std::cout << fmt::format("Parsing file: {0}...", m_loadPath) << "\n";
+        parseSingleFile();
+    }
+    else
+    {
+        std::cout << "Parsing assets..." << "\n";
+        parse();
+    }
     std::cout << "Loading asset data..." << "\n";
     bool success = loadAssets();
     if(success)
@@ -402,6 +500,11 @@ std::string AssetParser::StringToUpper(std::string s)
     return s;
 }
 
+void AssetParser::setMode(const std::string_view &action)
+{
+    if(action == "-h" || action == "--help") m_currentMode = Mode::Help;
+    else if(action == "-v" || action == "--version") m_currentMode = Mode::Version;
+    else if(action == "-f" || action == "--file") m_currentMode = Mode::SingleFile;
+    else m_currentMode = Mode::Default;
 
-
-
+}
