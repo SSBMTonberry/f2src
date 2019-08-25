@@ -36,9 +36,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4eeac679-7bf2-4815-bd78-f4cb2a20819d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/AssetParser.h" beforeDir="false" afterPath="$PROJECT_DIR$/AssetParser.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/AssetGeneratorConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/AssetGeneratorConfig.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,10 +71,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
+<<<<<<< Updated upstream
     <option name="directoryName" value="XCEBuDll" />
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1Pv8sMTfWaLX0P6Zw89t3rHbKyE" />
+=======
+    <option name="directoryName" value="hCbAjfeA" />
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectId" id="1PZ6kXzqsDmJzszIovUravSeCCl" />
+>>>>>>> Stashed changes
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -81,7 +94,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+<<<<<<< Updated upstream
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+=======
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+>>>>>>> Stashed changes
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -95,7 +112,11 @@
       </list>
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="CMake Application.f2src">
+=======
+  <component name="RunManager" selected="Catch.Test string accumulate">
+>>>>>>> Stashed changes
     <configuration name="Test string accumulate" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="f2src" TARGET_NAME="test_f2src" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="f2src" RUN_TARGET_NAME="test_f2src" TEST_CLASS="[string][accumulate]" TEST_METHOD="Test string accumulate" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -163,6 +184,7 @@
       <workItem from="1532465498749" duration="119000" />
       <workItem from="1532465680099" duration="146000" />
       <workItem from="1532465939433" duration="2020000" />
+<<<<<<< Updated upstream
       <workItem from="1532503243580" duration="3342000" />
       <workItem from="1555249382000" duration="4772000" />
       <workItem from="1555610707330" duration="599000" />
@@ -189,6 +211,20 @@
       <configuration name="Test string split (AssetNamespace)" configurationId="CMakeCatchTestRunConfigurationType" />
     </history-entry>
   </component>
+=======
+      <workItem from="1532503243580" duration="4372000" />
+      <workItem from="1532545072442" duration="3197000" />
+      <workItem from="1532805528350" duration="1992000" />
+      <workItem from="1532892795195" duration="855000" />
+      <workItem from="1566069418284" duration="219000" />
+      <workItem from="1566069694793" duration="88000" />
+      <workItem from="1566069816790" duration="217000" />
+      <workItem from="1566072909009" duration="124000" />
+      <workItem from="1566073419952" duration="76000" />
+    </task>
+    <servers />
+  </component>
+>>>>>>> Stashed changes
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -197,7 +233,13 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< Updated upstream
             <State />
+=======
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+>>>>>>> Stashed changes
           </value>
         </entry>
       </map>
