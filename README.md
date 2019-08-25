@@ -8,10 +8,10 @@ Files To Source (f2src) - A cross-platform program for generating source files w
 I created this program to be able to embed my files into my executable, but at the same time have a structure of the files in memory. This is done using namespaces to simulate folders. All folders are shown as lower-case, while files are shown as upper-case, so it will be easy to determine what's what. I've done some extra work to fix a few bugs before making this program open-source. The program should be fine, but if you encounter any weird bugs, please report them :)
 
 ## Examples on how to use the program (Linux)
-```
-NOTE: The same commands apply to Windows and Mac as well. Except the program itself 
-might have a extension.
-```
+
+> NOTE: The same commands apply to Windows and Mac as well. Except the program itself 
+might have an extension.
+
 **Help and program description:** `./f2src -h` 
 
 **Get program version:** `./f2src -v`
@@ -19,18 +19,18 @@ might have a extension.
 **Generate source file for ALL the data in your current folder:**  
 `./f2src` OR  
 `./f2src -d <source-folder> <destination-folder> <output (no file-extension)>`  
-Example: `./f2src -d ./test_files ./ my_files`
+**Example:** `./f2src -d ./test_files ./ my_files`
 
-OR THE OLD WAY: `./f2src <source-folder> <destination-folder> <output (no file-extension)>`  
-Example: `./f2src ./test_files ./ my_files`
+**OR THE OLD WAY:** `./f2src <source-folder> <destination-folder> <output (no file-extension)>`  
+**Example:** `./f2src ./test_files ./ my_files`
 
 **Generate source file for ALL the data in your current folder and all sub-folders and files (recursive):**  
-`./f2src -r` OR  
+`./f2src -r` **OR**  
 `/f2src -r <source-folder> <destination-folder> <output (no file-extension)>`  
   
 **Generate source file for for a single file (accepts any file and ignores the usual blacklist):**  
 `./f2src -f <file> <destination folder> <output (no file-extension)>`  
-Example: `./f2src -f ./file.png ./folder/ myname`
+**Example:** `./f2src -f ./file.png ./folder/ myname`
 
 
 > No parameters are required to generate files. When no parameters are typed, these default values are used:
