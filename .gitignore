@@ -150,3 +150,5 @@ AssetGeneratorConfig\.h
 cmake-build-relwithdebinfo/tests/CMakeFiles/
 
 cmake-build-relwithdebinfo/CMakeFiles/
+
+\.DS_Store
