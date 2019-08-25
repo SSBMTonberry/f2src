@@ -17,7 +17,7 @@ might have an extension.
 **Get program version:** `./f2src -v`
 
 **Generate source file for ALL the data in your current folder:**  
-`./f2src` OR  
+`./f2src` **OR**  
 `./f2src -d <source-folder> <destination-folder> <output (no file-extension)>`  
 **Example:** `./f2src -d ./test_files ./ my_files`
 
