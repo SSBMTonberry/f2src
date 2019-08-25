@@ -144,3 +144,5 @@ CMakeFiles/3\.10\.3/
 test_files/sprites/players/luigi_mapper\.h
 
 test_files/sprites/players/luigi\.h
+
+AssetGeneratorConfig\.h

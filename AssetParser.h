@@ -79,7 +79,7 @@ class AssetParser
          */
         BlackListDirectory = 4,
         /*!
-         * NOT IMPLEMENTED!
+         *
          * -f OR --file - Will create .h-files based on a list of files. No blacklist will be taken into consideration, as this is a file chosen by the user, but the file is valiated.
          * Call: -f <file> <destination folder> <output (no file-extension)> ...
          * Example: -f ./file.png ./folder/ myname
@@ -107,13 +107,25 @@ class AssetParser
          */
         All = 7,
         /*!
+         * -r OR --recursive -
+         * Call: -r <source-folder> <destination-folder> <output (no file-extension)> ...
+         * Example: -r ./ ./ myname
+         */
+        Recursive = 8,
+        /*!
+         * -d OR --directory -
+         * Call: -d <source-folder> <destination-folder> <output (no file-extension)> ...
+         * Example: -d ./ ./ myname
+         */
+        Directory = 9,
+        /*!
          * -o OR --output - Name of the files that are going to get generated and the output directory. If this is not
          *                  specified, the default name "files" will be used, and output will be the same directory
          *                  as the executable. Files that will be produced are "files.h" and "files_mapper.h"
          * Call: -o <name> <output_directory>
          * Example: -o my_files <output_directory>
          */
-        Output = 8
+        Output = 10
     };
 
     public:

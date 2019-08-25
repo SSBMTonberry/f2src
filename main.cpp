@@ -49,14 +49,25 @@ int main(int argc, char *argv[])
                              "source-folder: ./\n" <<
                              "destination-folder: ./\n" <<
                              "output: files\n\n" <<
-                             "-v OR --version - Get the current program version.\n" <<
-                             "-h OR --help - Get help and program description.\n" <<
-                             "-f OR --file - Create source for a single file.\n";
+                             "-v OR --version   - Get the current program version.\n" <<
+                             "-h OR --help      - Get help and program description.\n" <<
+                             "-f OR --file      - Create source for a single file.\n" <<
+                             "-r OR --recursive - Run recursively through all files and folders relative to source-folder.\n" <<
+                             "-d OR --directory - Run through all files in source folder.\n" <<
+                             "                    This is the default behavior when no parameters are used.\n";
                 return EXIT_SUCCESS;
             }
             else if(action == "-f" || action == "--file")
             {
                 std::cout << "\n Running in single file mode... \n";
+            }
+            else if(action == "-r" || action == "--recursive")
+            {
+                std::cout << "\n Running in recursive mode... \n";
+            }
+            else if(action == "-d" || action == "--directory")
+            {
+                std::cout << "\n Running in directory mode... \n";
             }
             else
             {

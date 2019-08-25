@@ -32,6 +32,12 @@ bool AssetParser::initialize(int argc, char **argv)
         m_filename = (argc > 4) ? argv[4] : "";
         return initializeSingleFile(m_loadPath, m_outputPath, m_filename);
     }
+    else if(m_currentMode == Mode::Recursive || m_currentMode == Mode::Directory) //(action == "-r" || action == "--recursive")
+    {
+        m_loadPath = (argc > 2) ? argv[2] : "./";
+        m_outputPath = (argc > 3) ? argv[3] : "./"; //"./files.h";
+        m_filename = (argc > 4) ? argv[4] : "files";
+    }
     else
     {
         m_loadPath = (argc > 1) ? argv[1] : "./";
@@ -165,28 +171,60 @@ void AssetParser::parse()
 
     m_container.clear();
     m_files.clear();
-    for (auto & p : fs::recursive_directory_iterator(m_loadPath))
-    {
-        if(IsDirectory(p))
-        {
-            std::string path = GetPath(p);
 
-            AssetNamespace asset;
-            asset.initialize(m_loadPath, path);
-            asset.setTabs(1);
-            m_container.addAsset(asset);
-        }
-        else
+    if(m_currentMode == Mode::Directory || m_currentMode == Mode::Default)
+    {
+        for (auto &p : fs::directory_iterator(m_loadPath))
         {
-            std::string path = GetPath(p);
-            if(!isBlacklisted(path))
+            if (IsDirectory(p))
             {
-                std::cout << "Adding file to container: " << path << "\n";
-                m_files.push_back(path);
+                std::string path = GetPath(p);
+
+                AssetNamespace asset;
+                asset.initialize(m_loadPath, path);
+                asset.setTabs(1);
+                m_container.addAsset(asset);
             }
             else
             {
-                std::cout << "Path contains blacklisted file (file ignored): " << path << "\n";
+                std::string path = GetPath(p);
+                if (!isBlacklisted(path))
+                {
+                    std::cout << "Adding file to container: " << path << "\n";
+                    m_files.push_back(path);
+                }
+                else
+                {
+                    std::cout << "Path contains blacklisted file (file ignored): " << path << "\n";
+                }
+            }
+        }
+    }
+    else
+    {
+        for (auto &p : fs::recursive_directory_iterator(m_loadPath))
+        {
+            if (IsDirectory(p))
+            {
+                std::string path = GetPath(p);
+
+                AssetNamespace asset;
+                asset.initialize(m_loadPath, path);
+                asset.setTabs(1);
+                m_container.addAsset(asset);
+            }
+            else
+            {
+                std::string path = GetPath(p);
+                if (!isBlacklisted(path))
+                {
+                    std::cout << "Adding file to container: " << path << "\n";
+                    m_files.push_back(path);
+                }
+                else
+                {
+                    std::cout << "Path contains blacklisted file (file ignored): " << path << "\n";
+                }
             }
         }
     }
@@ -505,6 +543,8 @@ void AssetParser::setMode(const std::string_view &action)
     if(action == "-h" || action == "--help") m_currentMode = Mode::Help;
     else if(action == "-v" || action == "--version") m_currentMode = Mode::Version;
     else if(action == "-f" || action == "--file") m_currentMode = Mode::SingleFile;
+    else if(action == "-r" || action == "--recursive") m_currentMode = Mode::Recursive;
+    else if(action == "-d" || action == "--directory") m_currentMode = Mode::Directory;
     else m_currentMode = Mode::Default;
 
 }
