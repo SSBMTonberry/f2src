@@ -64,68 +64,24 @@ class AssetParser
          */
         Version = 2,
         /*!
-         * NOT IMPLEMENTED!
-         * -bf OR --blacklistfile - All parameters followed by this will be blacklisted, if they are files.
-         *                          Must be called before any files are listed
-         * Call: -bf <file1> <file2> <file3> ...
-         * Example: -bf ./test.txt ./folder/Readme.md ./program
-         */
-        BlacklistFile = 3,
-        /*!
-         * NOT IMPLEMENTED!
-         * -bd OR --blacklistdir - All parameters followed by this will be blacklisted, if they are folders.
-         * Call: -bf <directory1> <directory2> <directory3> ...
-         * Example: -bd ./folder ./anotherfolder ./folder1/folder2
-         */
-        BlackListDirectory = 4,
-        /*!
          *
          * -f OR --file - Will create .h-files based on a list of files. No blacklist will be taken into consideration, as this is a file chosen by the user, but the file is valiated.
          * Call: -f <file> <destination folder> <output (no file-extension)> ...
          * Example: -f ./file.png ./folder/ myname
          */
-        SingleFile = 5,
-        /*!
-         * NOT IMPLEMENTED!
-         * -fs OR --files - Will create .h-files based on a list of files. No blacklist will be taken into consideration, as this is a file chosen by the user, but the file is valiated.
-         * Call: -f <file1> <file2> <file3> ...
-         * Example: -f ./file.png ./folder/anotherfile.png ./music.ogg
-         */
-        Files = 5,
-        /*!
-         * NOT IMPLEMENTED!
-         * -d OR --dir - Will create .h-files based on a list of directories(including their sub-directories). Blacklisted files are ignored, but blacklisted directories are not.
-         * Call: -d <directory1> <directory2> <directory3> ...
-         * Example: -d ./sprites ./music "./shaders/shaders with spaces"
-         */
-        Directories = 6,
-        /*!
-         * NOT IMPLEMENTED!
-         * -a OR --all - All files and subdirectories in the folder where the executable lies. Use for cases where you quickly want to generate a
-         *               lot of files.
-         * Call: -a
-         */
-        All = 7,
+        SingleFile = 3,
         /*!
          * -r OR --recursive -
          * Call: -r <source-folder> <destination-folder> <output (no file-extension)> ...
          * Example: -r ./ ./ myname
          */
-        Recursive = 8,
+        Recursive = 4,
         /*!
          * -d OR --directory -
          * Call: -d <source-folder> <destination-folder> <output (no file-extension)> ...
          * Example: -d ./ ./ myname
          */
-        Directory = 9,
-        /*!
-         * -o OR --output - Name of the files that are going to get generated and the output directory. If this is not
-         *                  specified, the default name "files" will be used, and output will be the same directory
-         *                  as the executable. Files that will be produced are "files.h" and "files_mapper.h"
-         * Call: -o <name> <output_directory>
-         * Example: -o my_files <output_directory>
-         */
-        Output = 10
+        Directory = 5
     };
 
     public:

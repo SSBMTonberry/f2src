@@ -36,7 +36,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4eeac679-7bf2-4815-bd78-f4cb2a20819d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/AssetParser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AssetParser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetParser.h" beforeDir="false" afterPath="$PROJECT_DIR$/AssetParser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +165,7 @@
       <workItem from="1555610707330" duration="599000" />
       <workItem from="1555789919506" duration="599000" />
       <workItem from="1561574336383" duration="8610000" />
-      <workItem from="1566743416906" duration="6099000" />
+      <workItem from="1566743416906" duration="8808000" />
     </task>
     <servers />
   </component>

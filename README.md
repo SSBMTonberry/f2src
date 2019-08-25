@@ -16,12 +16,22 @@ might have a extension.
 
 **Get program version:** `./f2src -v`
 
-**Generate source file for ALL the data (recursively) in you current folder:** `./f2src`
+**Generate source file for ALL the data in your current folder:**  
+`./f2src` OR  
+`./f2src -d <source-folder> <destination-folder> <output (no file-extension)>`  
+Example: `./f2src -d ./test_files ./ my_files`
 
-**Generate source file (using own parameters):** 
-`./f2src <source-folder> <destination-folder> <output (no file-extension)>`
+OR THE OLD WAY: `./f2src <source-folder> <destination-folder> <output (no file-extension)>`  
+Example: `./f2src ./test_files ./ my_files`
 
-**Example:** `./f2src ./test_files ./ my_files`
+**Generate source file for ALL the data in your current folder and all sub-folders and files (recursive):**  
+`./f2src -r` OR  
+`/f2src -r <source-folder> <destination-folder> <output (no file-extension)>`  
+  
+**Generate source file for for a single file (accepts any file and ignores the usual blacklist):**  
+`./f2src -f <file> <destination folder> <output (no file-extension)>`  
+Example: `./f2src -f ./file.png ./folder/ myname`
+
 
 > No parameters are required to generate files. When no parameters are typed, these default values are used:
 source-folder: ./
@@ -221,7 +231,7 @@ You can also, however, generate a project file by using the command line or powe
 Alternatively, this simple command should generate whatever is the default of your system: `cmake ./CMakeLists.txt`
 
 ### Linux
-I've developed this primarily using Linux and the CLion IDE. I've compiled the program for GCC 6.3.0, GCC 7.1.0 and GCC 8.1.0.
+I've developed this primarily using Linux and the CLion IDE. I've compiled the program for GCC 6.3.0, GCC 7.1.0, GCC 8.1.0 and GCC 9.1.0.
 
 You can compile it easily by using an IDE like CLion, or by Following these simple steps:
 
@@ -230,7 +240,7 @@ You can compile it easily by using an IDE like CLion, or by Following these simp
  3. Then compile by calling: `make`
 
 ### Mac
-This builds on MAC as well. It's fairly easy. Just open the `CMakeLists.txt` in the CMake client and you will figure it out :)
+Since this program utilizes `std::filesystem`, which is a C++17 feature that is yet to be supported by `Apple Clang` (as of 25.08.2019). You will have to download the latest version of `llvm` from `Homebrew` to be able to compile this program, then you will have to set this as your current compiler. An offical support for `std::filesystem` is said to be done during the release of Mac OSX 10.15 and XCode 11. As for `llvm` through `Homebrew`, `std::filesystem` has been supported for quite some time.
 
 ## Testing
 I've done some basic tests, but I might be missing something, as I've fixed quite some bugs and added a few features the last week. I have however used an earlier version of this program for embedding all my files into my C++ programs for quite some time, for all C++ programs I write, so it should work fine!
