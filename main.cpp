@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
                              "output: files\n\n" <<
                              "-v OR --version   - Get the current program version.\n" <<
                              "-h OR --help      - Get help and program description.\n" <<
-                             "-f OR --file      - Create source for a single file.\n" <<
+                             "-f OR --file      - Create source for a single file (accepts any file).\n" <<
                              "-r OR --recursive - Run recursively through all files and folders relative to source-folder.\n" <<
                              "-d OR --directory - Run through all files in source folder.\n" <<
                              "                    This is the default behavior when no parameters are used.\n";

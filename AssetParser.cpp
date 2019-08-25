@@ -481,9 +481,13 @@ void AssetParser::createMapperFile()
 void AssetParser::run()
 {
     //TODO: Make this one run based on parameters
-    std::cout << "Generating default blacklist for files..." << "\n";
-    createDefaultBlackList();
-    printBlacklist();
+    if(m_currentMode != Mode::SingleFile)
+    {
+        std::cout << "Generating default blacklist for files..." << "\n";
+        createDefaultBlackList();
+        printBlacklist();
+    }
+
     if(m_currentMode == Mode::SingleFile)
     {
         std::cout << fmt::format("Parsing file: {0}...", m_loadPath) << "\n";
