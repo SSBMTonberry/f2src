@@ -146,3 +146,7 @@ test_files/sprites/players/luigi_mapper\.h
 test_files/sprites/players/luigi\.h
 
 AssetGeneratorConfig\.h
+
+cmake-build-relwithdebinfo/tests/CMakeFiles/
+
+cmake-build-relwithdebinfo/CMakeFiles/

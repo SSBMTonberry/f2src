@@ -56,9 +56,9 @@ bool AssetParser::initializeSingleFile(const std::string &loadPath, const std::s
     if(fs::is_regular_file(m_loadPath))
     {
         if (m_outputPath.empty())
-            m_outputPath = file.parent_path().string();
+            m_outputPath = file.parent_path().u8string();
         if (m_filename.empty())
-            m_filename = file.stem();
+            m_filename = file.stem().u8string();
     }
 
     if(!fs::is_regular_file(m_loadPath))
